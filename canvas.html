@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<!-- Cyril Vedder          Project 5 CIS 115        2/13/14 -->
+<head>
+    <title>Canvas</title>
+    <meta charset="utf-8">
+    <style>canvas { border: 1px solid black; }</style>
+    <script>
+    	window.onload = function() {
+	    	var canvas  = document.getElementById("myCanvas");
+	    	var context = canvas.getContext("2d");
+	    
+			context.beginPath();
+			context.moveTo(40, 50);
+			context.lineTo(240, 50);
+			context.lineTo(240, 250);
+			context.lineTo(40, 250);
+			context.closePath();
+			context.strokeStyle = "adff2f";
+			context.lineWidth = 5;
+			context.stroke();
+			context.fillStyle = "ff8c00";
+			context.fill();
+	
+			context.beginPath();
+			context.moveTo(260, 50);
+			context.lineTo(460, 50);
+			context.lineTo(460, 250);
+			context.lineTo(260, 250);
+			context.closePath();
+			context.strokeStyle = "adff2f";
+			context.stroke();
+			context.fillStyle = "ff8c00"
+			context.fill();
+		
+			context.beginPath();
+			context.font = "30px Arial";
+			context.fillStyle = "48d1cc"
+			context.fillText("Spooky",30,375);
+			context.closePath();
+		
+			context.beginPath();
+			context.font = "30px Arial";
+			context.fillStyle = "ba55d3"
+			context.fillText("Language",360,375);
+			context.closePath();
+		
+			context.beginPath();
+			context.font = "30px Arial";
+			context.fillStyle = "white"
+			context.fillText("Palmer",100,150);
+			context.closePath();
+		
+			context.beginPath();
+			context.font = "30px Arial";
+			context.fillStyle = "white"
+			context.fillText("Squares",300,150);
+			context.closePath();
+		
+			var img = new Image();
+			img.onload = function() {
+        		context.drawImage(img, 150, 275, 200, 200);
+      		};
+      		img.src = "http://f0.bcbits.com/img/a2417025553_10.jpg"
+    	}
+    	
+    	
+    	function extraCredit() {
+    		var canvas  = document.getElementById("myCanvas");
+	    	var context = canvas.getContext("2d");
+    		 for(i=0;i<20;i++){
+      			context.fillRect(101+i*16,100,10,10);
+   			 }
+    	}
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500" id="myCanvas"></canvas>
+    <br>
+    <input type="button" value="Click for Extra Credit" onclick="extraCredit()">
+</body>
+</html>
